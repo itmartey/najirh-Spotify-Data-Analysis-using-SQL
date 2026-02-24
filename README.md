@@ -320,7 +320,7 @@ print('Saved file: top10_artists_danceability.csv')
 DANCEABILITY TRACKS - TOP 10 ARTISTS
 ---
 
-![Top 10 Artists](https://github.com/itmartey/najirh-Spotify-Data-Analysis-using-SQL/blob/patch-1/Top%2010%20Artists.png)
+![Top 10 Artists](https://github.com/itmartey/najirh-Spotify-Data-Analysis-using-SQL/blob/main/Top%2010%20Artists.png)
 
 **This visualisation identifies the artists have high tempo or danceable tracks within the dataset. By aggregating danceability scores at the artist level, we can see which performers consistently produce high-tempo, rhythmic content suitable for dance-centric platforms (like TikTok and Spotify Party playlists)**
   
