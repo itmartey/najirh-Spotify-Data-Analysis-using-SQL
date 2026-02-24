@@ -280,7 +280,8 @@ This optimization shows how indexing can drastically reduce query time, improvin
 ## Next Steps
 - **Visualize the Data**: Use a data visualization tool like **Tableau** or **Power BI** to create dashboards based on the query results.
 
-- **I used the jupyter notebook to generate the 
+- **I rather used jupyter notebook (python) to generate top 10 artists with danceable tracks**
+
 ```python
 # Computeing top 10 artists by average danceability and plotting a bar chart
 import pandas as pd
@@ -315,8 +316,13 @@ plt.show()
 top10.to_csv('top10_artists_danceability.csv', index=False)
 print('Saved file: top10_artists_danceability.csv')
 ```
-![Top 10 Artists](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_graphical%20view%201.png)
+---
+DANCEABILITY TRACKS - TOP 10 ARTISTS
+---
 
+![Top 10 Artists](https://github.com/itmartey/najirh-Spotify-Data-Analysis-using-SQL/blob/patch-1/Top%2010%20Artists.png)
+
+**This visualisation identifies the artists have high tempo or danceable tracks within the dataset. By aggregating danceability scores at the artist level, we can see which performers consistently produce high-tempo, rhythmic content suitable for dance-centric platforms (like TikTok and Spotify Party playlists)**
   
 - **Expand Dataset**: Add more rows to the dataset for broader analysis and scalability testing.
 - **Advanced Querying**: Dive deeper into query optimization and explore the performance of SQL queries on larger datasets.
