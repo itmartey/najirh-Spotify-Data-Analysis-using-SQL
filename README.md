@@ -279,6 +279,44 @@ This optimization shows how indexing can drastically reduce query time, improvin
 
 ## Next Steps
 - **Visualize the Data**: Use a data visualization tool like **Tableau** or **Power BI** to create dashboards based on the query results.
+
+- **I used the jupyter notebook to generate the 
+```python
+# Computeing top 10 artists by average danceability and plotting a bar chart
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from tqdm.auto import tqdm
+
+# Load dataset
+df = pd.read_csv('cleaned_dataset.csv', encoding='utf-8')
+
+# Show head
+print(df.head())
+
+# Compute average danceability by artist and also count
+artist_stats = df.groupby('Artist', dropna=False).agg({'Danceability': ['mean','count']})
+artist_stats.columns = ['Danceability_mean','Track_count']
+artist_stats = artist_stats.sort_values('Danceability_mean', ascending=False)
+
+print(artist_stats.head(10))
+
+# Plot top 10
+top10 = artist_stats.head(10).reset_index()
+plt.figure(figsize=(10,6))
+sns.barplot(data=top10, x='Danceability_mean', y='Artist', palette='viridis')
+plt.xlabel('Average Danceability')
+plt.title('Top 10 Artists by Average Danceability')
+plt.xlim(0,1)
+plt.tight_layout()
+plt.show()
+
+# Save top10 to csv
+top10.to_csv('top10_artists_danceability.csv', index=False)
+print('Saved file: top10_artists_danceability.csv')
+```
+![Top 10 Artists](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_graphical%20view%201.png)
+
   
 - **Expand Dataset**: Add more rows to the dataset for broader analysis and scalability testing.
 - **Advanced Querying**: Dive deeper into query optimization and explore the performance of SQL queries on larger datasets.
