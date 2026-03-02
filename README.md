@@ -182,7 +182,7 @@ WHERE ranking <= 3;
 SELECT 
     track,
     liveness,
-    ROUND(liveness::numeric, 3) AS liveness_rounded  -- optional: for nicer display
+    ROUND(liveness::numeric, 3) AS liveness_rounded
 FROM spotify
 WHERE liveness > (SELECT AVG(liveness) FROM spotify)
 ORDER BY liveness DESC; 
